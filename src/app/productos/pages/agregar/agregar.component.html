@@ -11,10 +11,7 @@
             <input type="text" class="form-control" formControlName="nombre">
         </div>
         <div class="col-auto">
-            <span class="form-text" 
-            *ngIf="tieneError()" 
-            errorMsg
-            color="blue">Este campo es requerido</span>
+            <span *ngIf="tieneError()" errorMsg>Requerido</span>
         </div>
     </div>
 
