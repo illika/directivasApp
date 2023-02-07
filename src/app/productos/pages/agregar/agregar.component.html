@@ -11,7 +11,7 @@
             <input type="text" class="form-control" formControlName="nombre">
         </div>
         <div class="col-auto">
-            <span *ngIf="tieneError()" errorMsg
+            <span  errorMsg [valido]="!tieneError()"
             ></span>
             <!--                
             [mensaje]="mensaje"

@@ -21,7 +21,15 @@ export class ErrorMsgDirective implements OnInit, OnChanges {
     this.htmlElement.nativeElement.innerText = value;
     this._mensaje = value;
     console.log(this.mensaje);
-    
+
+  }
+
+  @Input() set valido(value: boolean) {
+    if (value) {
+      this.htmlElement.nativeElement.classList.add("hidden");
+    } else {
+      this.htmlElement.nativeElement.classList.remove("hidden");
+    }
   }
 
   constructor(private el: ElementRef<HTMLElement>) {
@@ -48,7 +56,7 @@ export class ErrorMsgDirective implements OnInit, OnChanges {
 
     console.log(changes);
     */
-    
+
   }
 
   setEstilos() {
