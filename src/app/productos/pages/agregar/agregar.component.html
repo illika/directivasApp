@@ -10,7 +10,8 @@
         <div class="col-auto">
             <input type="text" class="form-control" formControlName="nombre">
         </div>
-        <div class="col-auto" *ngIf="tieneError()">
+        <div class="col-auto" *ngIf="tieneError()"
+        errorMsg>
             <span class="form-text">Este campo es requerido</span>
         </div>
     </div>
