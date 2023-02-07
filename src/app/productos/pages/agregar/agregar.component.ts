@@ -21,8 +21,8 @@ export class AgregarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  tieneError() : boolean{
-    return this.miFormulario.get('nombre')?.invalid ?? false;
+  tieneError(control: string) : boolean{
+    return this.miFormulario.get(control)?.invalid ?? false;
   }
 
   cmabiarTexto() {
