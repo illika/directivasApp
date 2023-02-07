@@ -1,9 +1,9 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[errorMsg]'
 })
-export class ErrorMsgDirective implements OnInit {
+export class ErrorMsgDirective implements OnInit, OnChanges {
 
   htmlElement: ElementRef<HTMLElement>;
 
@@ -18,6 +18,20 @@ export class ErrorMsgDirective implements OnInit {
     console.log("OnInit DIrective");
     this.setColor();
     this.setMensaje();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes["mensaje"]) {
+      const msg = changes["mensaje"].currentValue;
+      this.htmlElement.nativeElement.innerText = msg;
+    }
+    if(changes["color"]) {
+      const clr = changes["color"].currentValue;
+      this.htmlElement.nativeElement.style.color = clr;
+    }
+
+    console.log(changes);
+    
   }
 
   setColor(): void {

@@ -11,13 +11,17 @@
             <input type="text" class="form-control" formControlName="nombre">
         </div>
         <div class="col-auto">
-            <span *ngIf="tieneError()" errorMsg>Requerido</span>
+            <span *ngIf="tieneError()" errorMsg
+            [mensaje]="mensaje"
+            [color]="color"
+            >Requerido</span>
         </div>
     </div>
 
     <div class="row mt-3">
         <div class="col">
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-primary" (click)="cmabiarTexto()" >Guardar</button>
+            <button class="btn btn-primary ms-2" (click)="cambiarColor()" >Cambiar Color</button>
         </div>
     </div>
 </form>

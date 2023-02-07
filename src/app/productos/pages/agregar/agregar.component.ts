@@ -15,11 +15,22 @@ export class AgregarComponent implements OnInit {
     nombre: ["", Validators.required]
   });
 
+  mensaje: string = "illika";
+  color: string = "red";
+
   ngOnInit(): void {
   }
 
   tieneError() : boolean{
     return this.miFormulario.get('nombre')?.invalid ?? false;
+  }
+
+  cmabiarTexto() {
+    this.mensaje = "katari";
+  }
+
+  cambiarColor() {
+    this.color = "green";
   }
 
 }
