@@ -16,7 +16,7 @@ export class AgregarComponent implements OnInit {
   });
 
   mensaje: string = "illika";
-  color: string = "red";
+  color: string = "green";
 
   ngOnInit(): void {
   }
@@ -26,11 +26,12 @@ export class AgregarComponent implements OnInit {
   }
 
   cmabiarTexto() {
-    this.mensaje = "katari";
+    this.mensaje = Math.random().toString();
   }
 
   cambiarColor() {
-    this.color = "green";
+    const color = "#xxxxxx".replace(/x/g, y=>(Math.random()*16|0).toString(16));
+    this.color = color;
   }
 
 }
